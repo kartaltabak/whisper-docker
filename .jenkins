@@ -1,0 +1,10 @@
+@Library('github-jenkins-pipeline') _
+
+dockerBuildPipeline(
+        mainBranchCron: '@weekly',
+        imageBuilder: [
+                baseImage       : 'python:3',
+                registryRepoName: 'kartaltabak/whisper',
+                imageTestCommand: '-version'
+        ]
+)
