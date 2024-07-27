@@ -13,4 +13,4 @@ RUN pip install \
 
 RUN pip install whisper-timestamped
 
-COPY convert_mp4_to_mp3.sh /usr/local/bin/convert_mp4_to_mp3
+COPY convert_to_mp3.sh /usr/local/bin/convert_to_mp3
