@@ -12,3 +12,5 @@ RUN pip install \
     -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN pip install whisper-timestamped
+
+COPY convert_mp4_to_mp3.sh /usr/local/bin/convert_mp4_to_mp3
