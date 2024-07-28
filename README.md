@@ -13,10 +13,12 @@ to make it even easier.
 Assume you have a file called Rapunzel.mp4 in the current directory.
 
 ```bash
-docker run -it -v ${PWD}:/work -w /work kartaltabak/whisper convert_to_mp3 'Rapunzel.mp4'
+docker run -it -v ${PWD}:/work -w /work kartaltabak/whisper convert_to_mp3 'Rapunzel.mp4' --output_file 'Rapunzel.mp3'
 ```
 
-This will create a file named `Rapunzel.mp3` in the same directory.
+This will create a file named `Rapunzel.mp3` in the same directory. `
+--output_file` is optional. If you don't provide it, the output file will have the same name 
+as the input file, but with the extension changed to `.mp3`.
 
 ### Create srt file
 
