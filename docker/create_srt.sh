@@ -1,21 +1,17 @@
 #!/bin/bash
 
-# Function to display usage
 usage() {
     echo "Usage: $0 <input_file.mp3> [--output_file <output_file.srt>]"
     exit 1
 }
 
-# Check if at least one argument is provided
 if [ "$#" -lt 1 ]; then
     usage
 fi
 
-# Initialize variables
 input_file=""
 output_file=""
 
-# Parse arguments
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
         --output_file)
@@ -39,20 +35,16 @@ while [[ "$#" -gt 0 ]]; do
     esac
 done
 
-# Check if input file is provided
 if [ -z "$input_file" ]; then
     usage
 fi
 
-# Set default output file if not provided
 if [ -z "$output_file" ]; then
     output_file="${input_file%.*}.srt"
 fi
 
-# Run whisper_timestamped command to convert input file to output file
 whisper_timestamped "${input_file}" --output_dir /tmp --output_format srt --model tiny --model_dir cache --accurate
 
-# Check if whisper_timestamped command was successful
 if [ $? -eq 0 ]; then
     echo "Conversion successful: $output_file"
 else
@@ -60,9 +52,7 @@ else
     exit 1
 fi
 
-# Copy the output file to the specified location
-cp /tmp/"${input_file%.*}.srt" "$output_file"
-
+cp "/tmp/$(basename "${input_file}.srt")" "$output_file"
 if [ $? -eq 0 ]; then
     echo "File copied to: $output_file"
 else
