@@ -18,5 +18,5 @@ else
     exit 1
 fi
 
-cp /tmp/*.srt ./"{output_file}"
+cp /tmp/"${input_file}.srt" ./"{output_file}"
 
