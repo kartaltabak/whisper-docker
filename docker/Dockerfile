@@ -21,4 +21,4 @@ COPY convert_to_mp3.sh /usr/local/bin/convert_to_mp3
 COPY create_srt.sh /usr/local/bin/create_srt
 COPY translate_using_opus.py /usr/local/bin/translate_using_opus.py
 COPY translate_to_turkish.sh /usr/local/bin/translate_to_turkish
-
+COPY create_turkish_subtitle.sh /usr/local/bin/create_turkish_subtitle

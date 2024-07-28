@@ -42,4 +42,10 @@ docker run -it --rm -v ${PWD}:/work -w /work kartaltabak/whisper translate_to_tu
 `--output_file` is optional. If you don't provide it, the output file will have the same name
 Currently, the script is using the English to Turkish model. In the future, we may support more languages.
 
+### Create Turkish srt directly from mp4
 
+```bash
+docker run -it --rm -v ${PWD}:/work -w /work -v ${PWD}/.cache:/root/.cache/ kartaltabak/whisper create_turkish_srt 'Rapunzel.mp4' --output_file 'Rapunzel.tr.srt'
+```
+
+`--output_file` is optional. If you don't provide it, the output file will have the same name
