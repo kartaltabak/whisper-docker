@@ -27,6 +27,9 @@ Assume you have a file called Rapunzel.mp3 in the current directory.
 The following command will create a file named `Rapunzel.srt` in the same directory.
 
 ```bash
-docker run -it --rm -v ${PWD}:/work -w /work kartaltabak/whisper create_srt 'Rapunzel.mp3'
+docker run -it --rm -v ${PWD}:/work -w /work kartaltabak/whisper create_srt 'Rapunzel.mp3' --output_file 'Rapunzel.srt'
 ```
+
+`--output_file` is optional. If you don't provide it, the output file will have the same name
+as the input file, but with the extension changed to `.srt`.
 
