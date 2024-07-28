@@ -33,3 +33,13 @@ docker run -it --rm -v ${PWD}:/work -w /work kartaltabak/whisper create_srt 'Rap
 `--output_file` is optional. If you don't provide it, the output file will have the same name
 as the input file, but with the extension changed to `.srt`.
 
+### Create translation
+
+```bash
+docker run -it --rm -v ${PWD}:/work -w /work kartaltabak/whisper translate_to_turkish 'Rapunzel.srt' --output_file 'Rapunzel.tr.srt'
+```
+
+`--output_file` is optional. If you don't provide it, the output file will have the same name
+Currently, the script is using the English to Turkish model. In the future, we may support more languages.
+
+
