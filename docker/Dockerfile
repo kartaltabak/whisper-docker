@@ -14,3 +14,4 @@ RUN pip install \
 RUN pip install whisper-timestamped
 
 COPY convert_to_mp3.sh /usr/local/bin/convert_to_mp3
+COPY create_srt.sh /usr/local/bin/create_srt
