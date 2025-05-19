@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 import os
 import whisper
 import argparse
@@ -32,7 +30,7 @@ def main():
         print(f"Error: Input file {args.input} does not exist")
         return
 
-    transcribe_audio(args.input, args.model)
+    transcribe_audio(args.input)
 
 
 if __name__ == "__main__":

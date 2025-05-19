@@ -19,13 +19,11 @@ RUN python3 -m pip install --no-cache-dir \
     sentencepiece \
     sacremoses
 
-# Copy the application code
-COPY transcribe.py .
-COPY convert_to_mp3.sh .
-COPY create_srt.sh .
-COPY translate_using_opus.py .
-COPY translate_to_turkish.sh .
-COPY create_turkish_subtitle.sh .
+COPY transcribe.sh /usr/local/bin/transcribe
+COPY transcribe.py /usr/local/bin/transcribe.py
+COPY convert_to_mp3.sh /usr/local/bin/convert_to_mp3
+COPY create_srt.sh /usr/local/bin/create_srt
+COPY translate_using_opus.py /usr/local/bin/translate_using_opus.py
+COPY translate_to_turkish.sh /usr/local/bin/translate_to_turkish
+COPY create_turkish_subtitle.sh /usr/local/bin/create_turkish_subtitle
 
-# Set the entrypoint
-ENTRYPOINT ["python3", "transcribe.py"]
