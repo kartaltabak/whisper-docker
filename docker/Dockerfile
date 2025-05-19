@@ -27,8 +27,5 @@ COPY translate_using_opus.py .
 COPY translate_to_turkish.sh .
 COPY create_turkish_subtitle.sh .
 
-# Create a directory for input/output files
-RUN mkdir -p /app/input /app/output
-
 # Set the entrypoint
 ENTRYPOINT ["python3", "transcribe.py"]
